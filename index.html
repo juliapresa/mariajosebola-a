@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María José Bolaña</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">María José Bolaña</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="#" class="current">Inicio</a></li>
+      <li><a href="./pages/publicaciones.html">Publicaciones</a></li>
+      <li><a href="./pages/articulos.html">Divulgación</a></li>
+      <li><a href="./pages/eventos.html">Eventos</a></li>
+      <li><a href="./pages/contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="contenedor">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="avatar">
+        <img src="./assets/img/foto-perfil.jpg" alt="Foto de perfil" onerror="this.style.display='none'; this.parentNode.innerHTML='foto<br>perfil'">
+      </div>
+      <div class="hero-texto">
+        <div class="subtitulo-hero">Historiadora</div>
+        <h1>María José Bolaña</h1>
+        <p>Breve biografía profesional. Área de especialización, institución de pertenencia y líneas de investigación principales. Texto de presentación cálido y académico a la vez.</p>
+      </div>
+    </div>
+
+    <!-- FORMACIÓN -->
+    <div class="b-crema fade-in">
+      <div class="label">Formación</div>
+      <div class="titulo">Trayectoria académica</div>
+      <ul class="form-lista">
+        <li class="form-item">
+          <div class="form-dot"></div>
+          <div><h4>Doctorado en Historia</h4><p>Universidad · Año</p></div>
+        </li>
+        <li class="form-item">
+          <div class="form-dot"></div>
+          <div><h4>Maestría en Historia</h4><p>Universidad · Año</p></div>
+        </li>
+        <li class="form-item">
+          <div class="form-dot"></div>
+          <div><h4>Licenciatura en Historia</h4><p>Universidad · Año</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PUBLICACIONES DESTACADAS -->
+    <div class="b-borgona fade-in">
+      <div class="label">Publicaciones destacadas</div>
+      <div class="titulo">Publicaciones</div>
+      <div class="cards3">
+        <div class="card-borgona">
+          <span class="tag tag-arena">2022</span>
+          <span class="tag tag-arena">Dossier</span>
+          <h3>Habitar la ciudad. Estado y ciudadanía en América Latina desde la segunda mitad del siglo XX</h3>
+          <p>Revista de la Red de Intercátedras de Historia de América Latina Contemporánea | Año 9, N° 17 · Córdoba, diciembre 2022 - mayo 2023.</p>
+          <a class="art-link-crema" href="./assets/Dossier-Habitar.pdf" download>↓ Descargar PDF</a>
+          <a href="https://revistas.unc.edu.ar/index.php/RIHALC/issue/view/2604">Ver publicación →</a>
+        </div>
+        <div class="card-borgona">
+          <span class="tag tag-arena">Artículo</span>
+          <h3>Título del artículo</h3>
+          <p>Editorial · 2023</p>
+          <a href="pages/publicaciones.html">Ver publicación →</a>
+        </div>
+        <div class="card-borgona">
+          <span class="tag tag-arena">Capítulo</span>
+          <h3>Título del capítulo de libro</h3>
+          <p>Editorial · 2021</p>
+          <a href="pages/publicaciones.html">Ver publicación →</a>
+        </div>
+      </div>
+      <div class="ver-mas">
+        <button class="btn-ghost" onclick="navigate('pages/publicaciones.html')">Ver todas las publicaciones</button>
+      </div>
+    </div>
+
+    <!-- DIVULGACIÓN DESTACADA -->
+    <div class="b-crema fade-in">
+      <div class="label">Divulgación destacada</div>
+      <div class="titulo">Artículos academicos</div>
+      <div class="cards3">
+        <div class="card-crema">
+          <span class="tag tag-borgona">2026</span>
+          <h3>La Unidad Misiones en Montevideo: del plan a la emergencia autoritaria; de la Guerra Fría blanda a la Guerra Fría dura (1959–1975)</h3>
+          <p>Trashumante. Revista Americana de Historia Social | N.º 28.</p>
+          <a class="art-link-crema" href="./assets/unidadmisiones.pdf" download>↓ Descargar PDF</a>
+          <a class="art-link-crema" href="https://revistatrashumante.com/avada_portfolio/numero-28/" target="_blank">Ver artículo →</a>
+        </div>
+        <div class="card-crema">
+          <span class="tag tag-borgona">2024</span>
+          <h3>Cantegriles montevideanos como asunto político: movilización, vivienda y ciudad (1946–1956)</h3>
+          <p>Revista Storia urbana | N.º 2024/177.</p>
+          <a class="art-link-crema" href="./assets/pdfs/el-fenomeno-de-los-cantegriles-en-los estudios-sociales-1946-1973.pdf" download>↓ Descargar PDF</a>
+          <a class="art-link-crema" href="https://www.francoangeli.it/riviste/articolo/77401" target="_blank">Ver artículo →</a>
+        </div>
+        <div class="card-crema">
+          <span class="tag tag-borgona">2022</span>
+          <h3>Segregación urbana en el Estado benefactor: la política de barrios de emergencia y el desalojo urbano en Montevideo (1952–1958)</h3>
+          <p>Revista eletrônica da ANPHLAC | v. 22, 2022.</p>
+          <a class="art-link-crema" href="./assets/Segregacion_urbana_en_el_Estado_benefact (2).pdf" download>↓ Descargar PDF</a>
+          <a class="art-link-crema" href="https://doi.org/10.46752/anphlac.34.2022.4101" target="_blank">Ver artículo →</a>
+        </div>
+      </div>
+      <div class="ver-mas">
+        <button class="btn-outline" onclick="navigate('./pages/articulos.html')">Ver toda la divulgación</button>
+      </div>
+    </div>
+
+    <!-- PRÓXIMOS EVENTOS -->
+    <div class="b-azul fade-in">
+      <div class="label">Agenda</div>
+      <div class="titulo">Próximos eventos</div>
+      <div class="ev">
+        <div class="ev-fecha"><span class="mes">ago</span><span class="dia">14</span></div>
+        <div class="ev-info"><h4>Ítem</h4><p>Institución · Ciudad</p></div>
+      </div>
+      <div class="ev">
+        <div class="ev-fecha"><span class="mes">sep</span><span class="dia">3</span></div>
+        <div class="ev-info"><h4>Ítem</h4><p>Institución · Ciudad</p></div>
+      </div>
+      <div class="ver-mas" style="margin-top: 16px;">
+        <button class="btn-ghost" onclick="navigate('pages/eventos.html')">Ver todos los eventos</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="./pages/publicaciones.html">Publicaciones</a></li>
+        <li><a href="./pages/articulos.html">Divulgación</a></li>
+        <li><a href="./pages/eventos.html">Eventos</a></li>
+        <li><a href="./pages/contacto.html">Contacto</a></li>
+      </ul>
+      <span class="footer-mail">contacto@nombreapellido.com</span>
+    </footer>
+
+  </div>
+
+  <script src="./js/menu.js"></script>
+
+</body>
+</html>

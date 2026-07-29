@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicaciones — María José Bolaña</title>
+  <link rel="stylesheet" href="../css/publicaciones.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">María José Bolaña</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="#" class="current">Publicaciones</a></li>
+      <li><a href="articulos.html">Divulgación</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="contenedor">
+
+    <div class="b-azul" style="padding-bottom: 28px;">
+      <div class="titulo" style="margin-bottom: 4px;">Publicaciones</div>
+      <p style="font-size:14px; color:rgba(255,255,255,0.65); line-height:1.6;">Materiales publicados y dossiers de revistas académicas</p>
+    </div>
+
+    <div class="b-crema fade-in">
+      <div class="tabs tabs-crema">
+        <div class="tab-crema active" onclick="switchTab('publicaciones', this)">Publicaciones</div>
+        <div class="tab-crema" onclick="switchTab('dossiers', this)">Dossiers de revistas académicas</div>
+      </div>
+
+      <!-- PUBLICAIONES -->
+      <div class="tab-content active" id="publicaciones">
+ 
+        <!-- Libro 2020 -->
+        <div class="libro-ficha">
+          <div class="libro-tapa">
+            <img src="../assets/tapa-durban.png"
+                 alt="Tapa del libro Movimientos afrolatinoamericanos"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="tapa-placeholder" style="display:none;">sin tapa</div>
+            <a class="btn-descargar-libro" href="../assets/Movimientos_afrolatinoamericanos_en_el_c (4).pdf" download>↓ Descargar PDF</a>
+          </div>
+          <div class="libro-info">
+            <div class="libro-anio">2020</div>
+            <h2 class="libro-titulo">Movimientos afrolatinoamericanos en el camino a Durban (1999–2001). Proceso de la Conferencia Ciudadana (Chile, 2000) y la III Conferencia Mundial contra el Racismo (Durban, 2001)</h2>
+            <p class="libro-autor">Bolaña, María José</p>
+            <p class="libro-editorial">Mides-Uruguay</p>
+            <p class="libro-resena">El libro reconstruye el proceso latinoamericano y caribeño de participación y movilización social hacia la Conferencia Mundial contra el Racismo realizada en Durban en el año 2001. A través de la memoria de algunos y algunas de sus participantes claves, provenientes de diversos países —Brasil, Venezuela, Honduras, Costa Rica, Perú, Uruguay— y, a partir de documentos escritos, el trabajo presenta un proceso histórico que forma parte del pasado reciente de los movimientos afrolatinoamericanos y caribeños en su lucha contra el racismo a nivel local y global.</p>
+          </div>
+        </div>
+ 
+        <!-- Libro 2018 -->
+        <div class="libro-ficha">
+          <div class="libro-tapa">
+            <img src="../assets/tapa-cantegriles.png"
+                 alt="Tapa del libro Pobreza y segregación urbana"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="tapa-placeholder" style="display:none;">sin tapa</div>
+          </div>
+          <div class="libro-info">
+            <div class="libro-anio">2018</div>
+            <h2 class="libro-titulo">Pobreza y segregación urbana: "cantegriles" montevideanos 1946–1973</h2>
+            <p class="libro-autor">Bolaña, María José</p>
+            <p class="libro-editorial">Editorial Rumbo, Montevideo–Uruguay</p>
+            <p class="libro-resena">El libro se basa en la investigación histórica realizada en el marco de la maestría en Ciencias Humanas, orientación Historia rioplatense, de la Facultad de Humanidades y Ciencias de la Educación de la Universidad de la República. Se trata de una reconstrucción histórica de la ciudad informal montevideana denominada "cantegriles" entre 1946 y 1973 a través de las fuentes académicas —sociología, antropología fundamentalmente—; de las fuentes gubernamentales —discusiones parlamentarias, diagnósticos oficiales, políticas de vivienda— y de las fuentes orales, principalmente de la memoria de los pobladores de cantegriles. El abordaje historiográfico es desde la historia urbana, en este caso de Montevideo en la segunda mitad del siglo XX. Se observa el proceso de formación de los cantegriles a través de la expulsión de pobladores urbanos en un momento de crecimiento de la ciudad capital, atravesada por la falta de vivienda y por la discriminación racial. Las políticas gubernamentales para esas poblaciones fueron configurando un proceso de segregación urbana y de territorialización de la pobreza, en gran parte racializada y estigmatizada.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DOSSIERS -->
+      <div class="tab-content" id="dossiers">
+
+        <div class="art-item art-item-crema">
+          <span class="art-year art-year-crema">2022</span>
+          <div class="art-info">
+            <h4 class="art-titulo-crema">Habitar la ciudad. Estado y ciudadanía en América Latina desde la segunda mitad del siglo XX</h4>
+            <p class="revista revista-crema">María José Bolaña, Gabriela Gomes y Eulalia Portela Negrelos</p>
+            <p class="revista revista-crema">Revista de la Red de Intercátedras de Historia de América Latina Contemporánea | Año 9, N° 17. Córdoba · Diciembre 2022 - mayo 2023 ·</p>
+            <div class="art-acciones">
+              <a class="art-link-crema" href="../assets/Dossier-Habitar.pdf" download>↓ Descargar PDF</a>
+              <a class="art-link-crema" href="https://revistas.unc.edu.ar/index.php/RIHALC/issue/view/2604" target="_blank">Ver publicación →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-item art-item-crema">
+          <span class="art-year art-year-crema">2022</span>
+          <div class="art-info">
+            <h4 class="art-titulo-crema">Ciudad en América Latina en la segunda mitad del siglo XX: ideas, planes y proceso histórico</h4>
+            <p class="revista revista-crema">María José Bolaña y María Alejandra Bruschi</p>
+            <p class="revista revista-crema">Historia y problemas del siglo XX | Volumen 16, N.º 2 · Agosto-diciembre de 2022, Contemporánea ·</p>
+            <div class="art-acciones">
+              <a class="art-link-crema" href="../assets/Dossier-ciudad.pdf" download>↓ Descargar PDF</a>
+              <a class="art-link-crema" href="https://ojs.fhce.edu.uy/index.php/cont/issue/view/119" target="_blank">Ver publicación →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-item art-item-crema">
+          <span class="art-year art-year-crema">2018</span>
+          <div class="art-info">
+            <h4 class="art-titulo-crema">Miradas históricas y contemporáneas sobre la pobreza en Uruguay y América Latina</h4>
+            <p class="revista revista-crema">María José Álvarez, María José Bolaña, Aldo Marchesi</p>
+            <p class="revista revista-crema">Revista Encuentros Uruguayos | Volumen XI, N.º 1 · Julio 2018 ·</p>
+            <div class="art-acciones">
+              <a class="art-link-crema" href="../assets/Dossier-Miradas.pdf" download>↓ Descargar PDF</a>
+              <a class="art-link-crema" href="https://ojs.fhce.edu.uy/index.php/encuru/issue/view/84" target="_blank">Ver publicación →</a>
+            </div>
+          </div>
+        </div>
+       
+    </div>
+  </div>
+
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="#" class="current">Publicaciones</a></li>
+      <li><a href="articulos.html">Divulgación</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <span class="footer-mail">contacto@nombreapellido.com</span>
+  </footer>
+
+  <script src="../js/menu.js"></script>
+
+</body>
+</html>
