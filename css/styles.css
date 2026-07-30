@@ -273,6 +273,12 @@ body {
 }
 .ev:last-child { border: none; }
 
+.no-events {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  padding: 24px 0;
+}
+
 .ev-fecha {
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
