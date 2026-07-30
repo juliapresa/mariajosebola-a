@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;500&display=swap');
+
+:root {
+  --azul: #0f2545;
+  --borgona: #7A1C2E;
+  --borgona-claro: #912233;
+  --arena: #D9C9A3;
+  --arena-dark: #b8a57a;
+  --crema: #F7F4EE;
+  --crema-dark: #ede9df;
+  --tinta: #1a1a1a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #e8e4dc;
+  color: var(--tinta);
+  overflow-x: hidden;
+  animation: fadeInPage 0.4s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.contenedor { width: 100%; flex: 1; }
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--azul);
+  padding: 14px max(40px, calc((100% - 1400px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 18px; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; }
+.navbar-links { display: flex; gap: 28px; list-style: none; }
+.navbar-links a { color: var(--arena); font-size: 13px; text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+.navbar-links a:hover, .navbar-links a.current { color: white; border-bottom: 1px solid var(--arena); padding-bottom: 2px; }
+
+/* ── BLOQUES ── */
+.b-azul  { background: var(--azul);  display: flex; flex-direction: column; align-items: stretch; padding: 40px max(40px, calc((100% - 1400px) / 2)); }
+.b-crema { background: var(--crema); display: flex; flex-direction: column; align-items: stretch; padding: 80px max(40px, calc((100% - 1400px) / 2)); }
+.b-azul .titulo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: white; margin-bottom: 8px; }
+
+/* ── SIN EVENTOS ── */
+.sin-eventos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  gap: 16px;
+}
+
+.sin-eventos-icono {
+  font-size: 40px;
+  opacity: 0.3;
+}
+
+.sin-eventos h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--azul);
+}
+
+.sin-eventos p {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+/* ── FOOTER ── */
+.footer { background: var(--azul); padding: 20px max(40px, calc((100% - 1400px) / 2)); display: flex; justify-content: space-between; align-items: center; border-top: 2px solid var(--borgona); }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { color: var(--arena); font-size: 12px; text-decoration: none; }
+.footer-links a:hover { color: white; }
+.footer-mail { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+/* ── HAMBURGER ── */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--arena); border-radius: 2px; transition: all 0.25s ease; }
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .navbar-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--azul); padding: 8px 0 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .navbar-links.open { display: flex; }
+  .navbar-links li a { display: block; padding: 12px 24px; font-size: 15px; border-bottom: none !important; }
+  .navbar { position: relative; }
+  .b-azul, .b-crema { padding: 28px 24px; }
+  .footer { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
