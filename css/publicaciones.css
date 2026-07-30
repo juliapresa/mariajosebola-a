@@ -175,7 +175,7 @@ body {animation: fadeInPage 0.4s ease;}
 .tab-crema.active { color: var(--azul); border-bottom-color: var(--borgona); }
 .tab-crema:hover  { color: var(--azul); }
 
-/* ── ARTÍCULOS SOBRE CREMA ── */
+/* ── ARTÍCULOS── */
 .art-item-crema {
   border-bottom: 1px solid var(--crema-dark);
 }
