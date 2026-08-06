@@ -261,6 +261,10 @@ body {
 }
 .btn-outline:hover { border-color: var(--borgona); color: var(--borgona); }
 
+a{
+  text-decoration: none;
+}
+
 /* ── EVENTOS ── */
 .ev {
   display: flex;
