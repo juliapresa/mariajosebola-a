@@ -128,12 +128,26 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.hero-bio p {
+  line-height: 1;  
+}
+.hero-bio p + p {
+  margin-top: 1px;  
+}
 
 .hero-texto {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 600px;
+  flex: 1; 
+  max-width: none;
+}
+
+.hero-texto p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  max-width: none;
 }
 
 .hero-texto .subtitulo-hero {
@@ -155,11 +169,10 @@ body {
   line-height: 1.2;
 }
 
-.hero-texto p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
-  max-width: 520px;
+.btn-cv {
+  display: inline-block;
+  align-self: flex-start;  /* evita que el botón se estire a todo el ancho */
+  margin-top: 8px;
 }
 
 /* ── FORMACIÓN ── */
@@ -384,6 +397,9 @@ body {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
+
+  .btn-cv { align-self: center; }
+
   .hamburger { display: flex; }
 
   .navbar-links {

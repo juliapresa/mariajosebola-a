@@ -28,13 +28,64 @@
       <div class="titulo">Eventos</div>
     </div>
 
-    <div>
+    <!-- PRÓXIMOS -->
+    <section class="seccion-eventos">
+      <h2 class="seccion-titulo">Próximos eventos</h2>
+
+      <!-- Cuando no haya próximos eventos, borrar la ficha de abajo y descomentar este bloque:
       <div class="sin-eventos">
         <div class="sin-eventos-icono">📅</div>
-        <h3>Próximamente</h3>
         <p>Por el momento no hay eventos programados.</p>
       </div>
-    </div>
+      -->
+
+      <div class="ev-ficha">
+        <div class="ev-media">
+          <a href="../assets/evento-anterior.jpg" target="_blank" class="ev-foto">
+            <img src="../assets/evento-anterior.jpg"
+                 alt="Exposición «Vieja querida historia: memorias de la ciudad»"
+                 loading="lazy"
+                 onerror="this.parentNode.style.display='none'; this.parentNode.nextElementSibling.style.display='flex'">
+          </a>
+          <div class="foto-placeholder" style="display:none;">sin foto</div>
+          <a class="btn-ver-evento" href="https://www.gub.uy/ministerio-educacion-cultura/comunicacion/calendario-actividades/inauguracion-exposicion-vieja-querida-historia-memorias-ciudad" target="_blank" rel="noopener">Ver más →</a>
+        </div>
+        <div class="ev-info">
+          <div class="ev-dato">26 de septiembre de 2026</div>
+          <div class="ev-dato">EXPOSICIÓN</div>
+          <h3 class="ev-titulo">Inauguración de la exposición «Vieja querida historia: memorias de la ciudad»</h3>
+          <p class="ev-lugar">Museo Histórico Nacional, Casa de Rivera, Montevideo.</p>
+          <!-- Descripción opcional:
+          <p class="ev-resena">Texto breve sobre el evento y la participación de María José.</p>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTERIORES -->
+    <section class="seccion-eventos seccion-crema">
+      <h2 class="seccion-titulo">Eventos anteriores</h2>
+
+      <div class="ev-ficha">
+        <div class="ev-media">
+          <div class="ev-portada">
+            <span class="ev-portada-sub">Mapa histórico interactivo</span>
+            <span class="ev-portada-texto">Casavalle</span>
+          </div>
+          <a class="btn-ver-evento" href="https://municipiod.montevideo.gub.uy/mapeo-hist%C3%B3rico-de-casavalle" target="_blank" rel="noopener">Ver más →</a>
+        </div>
+        <div class="ev-info">
+          <div class="ev-dato">1 de octubre de 2025</div>
+          <div class="ev-dato">PRESENTACIÓN</div>
+          <h3 class="ev-titulo">«Mapa histórico interactivo de Casavalle»</h3>
+          <p class="ev-lugar">Centro Cívico Luisa Cuesta, Montevideo.</p>
+          <!-- Descripción opcional:
+          <p class="ev-resena">Texto breve sobre el evento y la participación de María José.</p>
+          -->
+        </div>
+      </div>
+
+    </section>
 
   </div>
 
