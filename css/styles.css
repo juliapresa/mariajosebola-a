@@ -1,5 +1,11 @@
+/* =========================================================
+   STYLES.CSS — Página de Inicio
+   ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;500&display=swap');
 
+
+/* ── 1. VARIABLES ── */
 :root {
   --azul: #0f2545;
   --azul-claro: #22508a;
@@ -13,20 +19,49 @@
   --borde-claro: rgba(255,255,255,0.15);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── 2. BASE ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Source Sans 3', sans-serif;
   background: #e8e4dc;
   color: var(--tinta);
   overflow-x: hidden;
+  animation: fadeInPage 0.4s ease;
+}
+
+a {
+  text-decoration: none;
 }
 
 .contenedor {
   width: 100%;
 }
 
-/* ── NAVBAR ── */
+
+/* ── 3. ANIMACIONES ── */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── 4. NAVBAR ── */
 .navbar {
   background: var(--azul);
   padding: 14px max(40px, calc((100% - 1400px) / 2));
@@ -68,17 +103,34 @@ body {
   padding-bottom: 2px;
 }
 
-/* ── BLOQUES ── */
-.b-azul   { background: var(--azul);   padding: 40px; }
-.b-borgona { background: var(--borgona); padding: 40px; }
-.b-crema  { background: var(--crema);  padding: 40px; }
 
-.b-azul > *,
-.b-borgona > *,
-.b-crema > *,
-.hero > *:not(.avatar) {
-  max-width: 1400px;
+/* ── 5. HAMBURGUESA (menú móvil) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
 }
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--arena);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ── 6. BLOQUES DE COLOR ── */
+.b-azul    { background: var(--azul); }
+.b-borgona { background: var(--borgona); }
+.b-crema   { background: var(--crema); }
 
 .b-azul,
 .b-borgona,
@@ -89,15 +141,47 @@ body {
   padding: 40px max(40px, calc((100% - 1400px) / 2));
 }
 
-.b-azul   .label,
-.b-borgona .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--arena); margin-bottom: 8px; }
-.b-crema  .label  { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--arena-dark); margin-bottom: 8px; }
+.b-azul > *,
+.b-borgona > *,
+.b-crema > *,
+.hero > *:not(.avatar) {
+  max-width: 1400px;
+}
 
-.b-azul   .titulo,
-.b-borgona .titulo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: white; margin-bottom: 24px; }
-.b-crema  .titulo  { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--azul); margin-bottom: 24px; }
+.b-azul .label,
+.b-borgona .label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--arena);
+  margin-bottom: 8px;
+}
+.b-crema .label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--arena-dark);
+  margin-bottom: 8px;
+}
 
-/* ── HERO ── */
+.b-azul .titulo,
+.b-borgona .titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 24px;
+}
+.b-crema .titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--azul);
+  margin-bottom: 24px;
+}
+
+
+/* ── 7. HERO / BIOGRAFÍA ── */
 .hero {
   background: var(--azul);
   padding: 48px max(40px, calc((100% - 1400px) / 2));
@@ -122,31 +206,17 @@ body {
   border: 2px solid var(--arena);
   overflow: hidden;
 }
-
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.hero-bio p {
-  line-height: 1;  
-}
-.hero-bio p + p {
-  margin-top: 1px;  
 }
 
 .hero-texto {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1; 
-  max-width: none;
-}
-
-.hero-texto p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
+  flex: 1;
   max-width: none;
 }
 
@@ -154,10 +224,9 @@ body {
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--borgona-claro);
   margin-bottom: 10px;
   font-weight: 500;
-  color: #e8a0ac;
+  color: #e8a0ac;   /* rosado claro, visible sobre el azul */
 }
 
 .hero-texto h1 {
@@ -169,14 +238,34 @@ body {
   line-height: 1.2;
 }
 
+.hero-texto p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  max-width: none;
+}
+
+/* Párrafos de la biografía: más compactos que el resto.
+   Van después de .hero-texto p para que se apliquen. */
+.hero-bio p {
+  line-height: 1.65;
+}
+.hero-bio p + p {
+  margin-top: 6px;
+}
+
 .btn-cv {
   display: inline-block;
-  align-self: flex-start;  /* evita que el botón se estire a todo el ancho */
+  align-self: flex-start;   /* evita que el botón se estire a todo el ancho */
   margin-top: 8px;
 }
 
-/* ── FORMACIÓN ── */
-.form-lista { list-style: none; }
+
+/* ── 8. FORMACIÓN ── */
+.form-lista {
+  list-style: none;
+}
+
 .form-item {
   display: flex;
   gap: 14px;
@@ -185,13 +274,16 @@ body {
   border-bottom: 1px solid var(--crema-dark);
 }
 .form-item:last-child { border: none; }
+
 .form-dot {
-  width: 9px; height: 9px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--borgona);
   margin-top: 5px;
   flex-shrink: 0;
 }
+
 .form-item h4 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px;
@@ -199,16 +291,39 @@ body {
   color: var(--azul);
   margin-bottom: 2px;
 }
-.form-item p { font-size: 12px; color: #888; }
+.form-item p {
+  font-size: 12px;
+  color: #888;
+}
 
-/* ── CARDS ── */
-.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
+/* ── 9. TARJETAS (cards) ── */
+.cards3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cards2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Tarjeta sobre fondo borgoña */
 .card-borgona {
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 6px;
   padding: 16px;
   background: rgba(255,255,255,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.card-borgona:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 .card-borgona h3 {
   font-family: 'Cormorant Garamond', serif;
@@ -218,14 +333,32 @@ body {
   margin-bottom: 6px;
   line-height: 1.4;
 }
-.card-borgona p  { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; }
-.card-borgona a  { font-size: 12px; color: var(--arena); text-decoration: none; display: inline-block; margin-top: 10px; }
+.card-borgona p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.card-borgona a {
+  font-size: 12px;
+  color: var(--arena);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
 
+/* Tarjeta sobre fondo crema */
 .card-crema {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--crema-dark);
   border-radius: 6px;
   padding: 16px;
   background: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-crema:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .card-crema h3 {
   font-family: 'Cormorant Garamond', serif;
@@ -235,10 +368,42 @@ body {
   margin-bottom: 6px;
   line-height: 1.4;
 }
-.card-crema p  { font-size: 12px; color: #888; line-height: 1.5; }
-.card-crema a  { font-size: 12px; color: var(--azul); text-decoration: none; display: inline-block; margin-top: 10px; }
+.card-crema p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}
+.card-crema a {
+  font-size: 12px;
+  color: var(--azul);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
 
-/* ── TAGS ── */
+/* Partes internas de las tarjetas */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Los links se ubican siempre al pie de la tarjeta,
+   así quedan alineados aunque los textos tengan distinto largo */
+.card-acciones {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.card-acciones a {
+  margin-top: 0;
+  margin-right: 0;
+}
+
+
+/* ── 10. ETIQUETAS (tags) ── */
 .tag {
   font-size: 10px;
   text-transform: uppercase;
@@ -249,13 +414,19 @@ body {
   margin-bottom: 10px;
   font-weight: 500;
 }
-.tag-arena  { background: var(--arena); color: #4a3a18; }
+.tag-arena   { background: var(--arena);   color: #4a3a18; }
 .tag-borgona { background: var(--borgona); color: white; }
-.tag-azul   { background: var(--azul); color: white; }
+.tag-azul    { background: var(--azul);    color: white; }
 
-/* ── BOTONES ── */
-.ver-mas { text-align: center; margin-top: 24px; }
+
+/* ── 11. BOTONES Y LINKS ── */
+.ver-mas {
+  text-align: center;
+  margin-top: 24px;
+}
+
 .btn-ghost {
+  display: inline-block;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.35);
   color: white;
@@ -268,7 +439,9 @@ body {
   transition: border-color 0.2s;
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.7); }
+
 .btn-outline {
+  display: inline-block;
   background: transparent;
   border: 1px solid var(--arena-dark);
   color: var(--azul);
@@ -279,13 +452,22 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   transition: border-color 0.2s;
 }
-.btn-outline:hover { border-color: var(--borgona); color: var(--borgona); }
-
-a{
-  text-decoration: none;
+.btn-outline:hover {
+  border-color: var(--borgona);
+  color: var(--borgona);
 }
 
-/* ── EVENTOS ── */
+.art-link-crema {
+  color: var(--borgona);
+  font-size: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-right: 10px;
+}
+.art-link-crema:hover { opacity: 0.7; }
+
+
+/* ── 12. EVENTOS ── */
 .ev {
   display: flex;
   gap: 18px;
@@ -305,110 +487,81 @@ a{
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 5px;
-  width: 48px; height: 48px;
+  width: 48px;
+  height: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-.ev-fecha .mes { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--arena); }
-.ev-fecha .dia { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: white; line-height: 1; }
+.ev-fecha .mes {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--arena);
+}
+.ev-fecha .dia {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+}
 
-.ev-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: white; margin-bottom: 3px; }
-.ev-info p  { font-size: 12px; color: rgba(255,255,255,0.55); }
+.ev-info h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 3px;
+}
+.ev-info p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
 
-.art-link-crema { color: var(--borgona); font-size: 12px; text-decoration: none; transition: opacity 0.2s; margin-right: 10px;}
-.art-link-crema:hover { opacity: 0.7; }
 
-/* ── FOOTER ── */
+/* ── 13. FOOTER ── */
 .footer {
-  background: #0f2545;
+  background: var(--azul);
   padding: 20px max(40px, calc((100% - 1400px) / 2));
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid var(--borgona);
 }
-.footer-links { display: flex; gap: 20px; list-style: none; }
-.footer-links a { color: var(--arena); font-size: 12px; text-decoration: none; }
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.footer-links a {
+  color: var(--arena);
+  font-size: 12px;
+  text-decoration: none;
+}
 .footer-links a:hover { color: white; }
-.footer-mail { font-size: 12px; color: rgba(255,255,255,0.5); }
-
-/* ── TRANSICIÓN DE PÁGINA ── */
-body {
-  animation: fadeInPage 0.4s ease;
-}
-@keyframes fadeInPage {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+.footer-mail {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
 }
 
-/* ── FADE IN AL SCROLL ── */
-.fade-in {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-/* ── HOVER CARDS ── */
-.card-borgona {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-.card-borgona:hover {
-  transform: translateY(-4px);
-  background: rgba(255,255,255,0.14);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.card-crema {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.card-crema:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-/* ── HAMBURGER ── */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--arena);
-  border-radius: 2px;
-  transition: all 0.25s ease;
-}
-.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── RESPONSIVE ── */
+/* ── 14. RESPONSIVE (pantallas de hasta 768 px) ── */
 @media (max-width: 768px) {
 
-  .btn-cv { align-self: center; }
-
+  /* Menú */
   .hamburger { display: flex; }
-
+  .navbar { position: relative; }
   .navbar-links {
     display: none;
     flex-direction: column;
     gap: 0;
     position: absolute;
     top: 100%;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     background: var(--azul);
     padding: 8px 0 16px;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -420,12 +573,32 @@ body {
     font-size: 15px;
     border-bottom: none !important;
   }
-  .navbar { position: relative; }
 
-  .hero { flex-direction: column; align-items: center; text-align: center; padding: 36px 24px; }
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 36px 24px;
+  }
   .hero-texto p { max-width: 100%; }
+  .hero-bio { text-align: left; }   /* párrafos largos se leen mejor alineados a la izquierda */
+  .btn-cv { align-self: center; }
+
+  /* Bloques y tarjetas */
   .b-azul, .b-borgona, .b-crema { padding: 28px 24px; }
-  .cards3 { grid-template-columns: 1fr; }
-  .footer { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .cards3,
+  .cards2 { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
