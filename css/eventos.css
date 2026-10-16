@@ -145,7 +145,6 @@ body {
 .seccion-eventos {
   padding: 48px max(40px, calc((100% - 1400px) / 2));
 }
-
 .seccion-crema {
   background: var(--crema);
 }
@@ -323,6 +322,34 @@ body {
 }
 
 
+.art-acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Variante sobre fondo crema */
+.art-item-crema   { border-bottom: 1px solid var(--crema-dark); }
+.art-year-crema   { color: var(--arena-dark); }
+.art-titulo-crema { color: var(--azul) !important; }
+.revista-crema    { color: #777 !important; }
+
+.art-link-crema {
+  color: var(--borgona);
+  font-size: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-right: 10px;
+}
+.art-link-crema:hover { opacity: 0.7; }
+
+/* Próximos eventos: imágenes más anchas */
+.seccion-proximos .ev-media {
+  flex: 0 0 500px;
+}
+
 /* ── 10. FOOTER ── */
 .footer {
   background: var(--azul);
@@ -389,6 +416,11 @@ body {
     flex: none;
     width: 100%;
     max-width: 360px;
+  }
+  
+  .seccion-proximos .ev-media {
+    flex: none;
+    max-width: 100%;
   }
 
   /* Footer */
